@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+.border {
+    position: relative;
+    margin: 200px auto 0;
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(0deg, #000, #262626);
+
+}
+
+.border::before,
+.border::after
+{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #fb0094, #fb0094, #0000ff, #00ff00, #ffff00, #fb0094);
+    background-size: 400%;
+    height: calc(100% + 4px);
+    width: calc(100% + 4px);
+
+    z-index: -1;
+    animation: animate 20s linear infinite;
+
+}
+.border::after
+{
+    filter: blur(20px);
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 300% 0;
+    }
+
+    100% {
+        background-position: 300% 0;
+    }
+}
+
+.border span{
+    display: inline-block;
+   color: aliceblue;
+   font-family: 'Times New Roman', Times, serif;
+   font-weight: 600px;
+   font-size: 44px;
+   margin-top: 170px;
+   margin-left: 140px;
+   
+   
+}
+
+
+/*.border::after{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #fb0094,#fb0094, #0000ff, #00ff00, #ffff00, #fb0094 ); 
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+   
+   }*/
+
+
+/*
+   height: calc( 100% + 4px);
+   width:  calc( 100% + 4px);    bular ishlash uchun arfmetik aperatordan keyin probel qoyiladi.
+ */
